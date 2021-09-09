@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "myGIFs",
+    "slug": "myGIFs",
+    "version": "1.0.0",
+    "assetBundlePatterns": ["**/*"],
+    "icon": "./assets/images/icons.png",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#232121"
+    }
+  },
+  "name": "myGIFs"
+}
