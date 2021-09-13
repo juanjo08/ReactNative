@@ -19,19 +19,16 @@ export default function App() {
   });
   const [actions, setActions] = useState({
     sendIds: (ids) => {
-      store.todos.find((element) => {
-        if (element.id !== ids.id) {
-          setStore(store.todos.push(ids));
-        } else {
-          console.log('eliminamos el id..');
-        }
-      });
-      console.log('store: ', store);
-      //setStore({ ...store, todos: store.todos.concat(ids) });
+      let exists;
+      exists = store.todos.findIndex((element) => element.id === ids.id);
+      if (exists !== -1) {
+        store.todos.splice(exists, 1);
+      } else {
+        setStore(store.todos.push(ids));
+      }
+      console.log('store: ', store.todos);
     },
-    //deleteIds: (ids) => setStore({ ...store, todos: store.todos.concat(ids) }),
   });
-
   return (
     <>
       <AppContext.Provider value={{ store, actions }}>
